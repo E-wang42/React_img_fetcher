@@ -3,6 +3,7 @@ import unsplash from "./api/unsplash";
 import SearchBar from "./components/SearchBar";
 import { Component } from "react";
 import ImageList from "./components/ImageList";
+import PageCentered from "./styling/Styled";
 
 class App extends Component {
   constructor(props) {
@@ -20,10 +21,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: "10px" }}>
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        <ImageList images={this.state.images} />
-      </div>
+      <PageCentered>
+        <div className="ui container" style={{ marginTop: "10px" }}>
+          <SearchBar onSubmit={this.onSearchSubmit} />
+          <ImageList images={this.state.images} />
+        </div>
+      </PageCentered>
     );
   }
 }
